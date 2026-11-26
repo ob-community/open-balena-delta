@@ -40,8 +40,7 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN npm install -g typescript@5.9.3 && \
-    npm install --no-fund --no-update-notifier && \
-    tsc
+RUN npm ci --no-fund --no-update-notifier && \
+    npx tsc
 
 CMD ["/bin/sh", "/usr/src/app/start.sh"]
